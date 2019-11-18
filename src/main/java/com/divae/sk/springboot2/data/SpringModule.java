@@ -14,6 +14,6 @@ import javax.persistence.Table;
 public class SpringModule {
 
     @Id
-    private Long id;
+    private Integer id;
     private String name;
 }
