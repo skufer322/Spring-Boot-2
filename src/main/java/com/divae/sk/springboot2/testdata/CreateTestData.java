@@ -27,9 +27,9 @@ public class CreateTestData {
 
     @PostConstruct
     public void triggerTestDataCreation() {
+        createPublishers();
         List<Book> books = createBooks();
         createAuthors(books);
-        createPublishers();
     }
 
     private void createAuthors(List<Book> books) {
@@ -49,25 +49,32 @@ public class CreateTestData {
     }
 
     private List<Book> createBooks() {
+        Publisher basteiLuebbe = publisherRepository.findOneByName("Bastei Lübbe").orElseThrow(RuntimeException::new);
+        Publisher spectra = publisherRepository.findOneByName("Spectra").orElseThrow(RuntimeException::new);
+
         Book hyperion = Book.builder()
                 .isbn("0553283685")
                 .title("Hyperion")
                 .language(LanguageEnum.EN)
+                .publisher(basteiLuebbe)
                 .build();
         Book fall_of_hyperion = Book.builder()
                 .isbn("0553288202")
                 .title("The Fall of Hyperion")
                 .language(LanguageEnum.EN)
+                .publisher(basteiLuebbe)
                 .build();
         Book sternentraueme = Book.builder()
                 .isbn("3404232542")
                 .title("Sternenträume")
                 .language(LanguageEnum.DE)
+                .publisher(spectra)
                 .build();
         Book drachenfeuer = Book.builder()
                 .isbn("3404232569")
                 .title("Drachenfeuer")
                 .language(LanguageEnum.DE)
+                .publisher(basteiLuebbe)
                 .build();
 
         List<Book> books = List.of(hyperion, fall_of_hyperion, sternentraueme, drachenfeuer);

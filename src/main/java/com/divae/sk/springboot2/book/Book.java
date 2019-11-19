@@ -1,15 +1,13 @@
 package com.divae.sk.springboot2.book;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.divae.sk.springboot2.publisher.Publisher;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
 @Data
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 @Builder(toBuilder = true)
 public class Book {
@@ -21,4 +19,7 @@ public class Book {
 
     @Enumerated(EnumType.STRING)
     private LanguageEnum language;
+
+    @OneToOne
+    private Publisher publisher;
 }
