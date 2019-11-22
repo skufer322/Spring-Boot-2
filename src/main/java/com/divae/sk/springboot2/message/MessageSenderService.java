@@ -14,7 +14,7 @@ public class MessageSenderService {
     private final JmsTemplate jmsTemplate;
 
     void sendGreeting(final String greeter){
-        jmsTemplate.send("greetings-topic",
+        jmsTemplate.send("greetings-queue",
                 session -> session.createTextMessage("Hello to Spring from " + greeter + "!"));
     }
 
