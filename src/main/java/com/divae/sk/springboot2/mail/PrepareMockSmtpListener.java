@@ -22,7 +22,7 @@ import org.subethamail.smtp.server.SMTPServer;
 import static com.divae.sk.springboot2.mail.PrepareMockSmtpListener.LATCH;
 
 /**
- * Das ist irgendein Schwachsinn aus dem Springbootbuch.
+ * Eingebetteter SMPT-Server aus dem Springbootbuch
  */
 public class PrepareMockSmtpListener implements SpringApplicationRunListener {
 
