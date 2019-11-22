@@ -1,0 +1,1 @@
+#org.springframework.boot.SpringApplicationRunListener = com.divae.sk.springboot2.mail.PrepareMockSmtpListener
