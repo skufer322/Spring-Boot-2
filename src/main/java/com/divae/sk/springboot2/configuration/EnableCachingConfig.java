@@ -1,0 +1,9 @@
+package com.divae.sk.springboot2.configuration;
+
+import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+@EnableCaching
+public class EnableCachingConfig {
+}
