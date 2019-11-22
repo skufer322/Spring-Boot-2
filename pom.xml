@@ -63,6 +63,13 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <dependency>
+            <!-- In-Memory MongoDb für Tests -->
+            <groupId>de.flapdoodle.embed</groupId>
+            <artifactId>de.flapdoodle.embed.mongo</artifactId>
+            <version>2.2.0</version>
+            <scope>test</scope>
+        </dependency>
 
         <!-- non-spring projects -->
         <dependency>

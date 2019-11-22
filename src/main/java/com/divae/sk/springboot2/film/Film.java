@@ -1,16 +1,23 @@
 package com.divae.sk.springboot2.film;
 
-import lombok.Getter;
+import lombok.*;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collation = "films")
-@Getter
+import javax.persistence.Id;
+
+@Document(collection = "films")
+@Data
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Film {
 
+    @Id
     private String id;
-    private String title;
+    @NonNull private String title;
+    @NonNull private Integer year;
 
-    public Film(String title) {
+    @Builder(toBuilder = true)
+    public Film(@NonNull String title, @NonNull Integer year){
         this.title = title;
+        this.year = year;
     }
 }
