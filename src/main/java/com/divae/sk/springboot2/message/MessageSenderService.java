@@ -36,7 +36,7 @@ public class MessageSenderService {
                 .build();
         jmsTemplate.convertAndSend("greetings-object-queue", mmo, m -> {
             m.setJMSCorrelationID(UUID.randomUUID().toString());
-            m.setJMSReplyTo(new ActiveMQQueue("header-specified-responses-queue"));
+            m.setJMSReplyTo(new ActiveMQQueue("header-specified-responses-queue")); // für NON-void Methoden
             return m;
         });
     }
