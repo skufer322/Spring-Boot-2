@@ -8,18 +8,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class GreetingController {
 
-    private final GreetingQueueService greetingQueueService;
-    private final GreetingTopicService greetingTopicService;
+    private final GreetingService greetingService;
 
     @GetMapping("/greeting/queue")
     public String triggerGreetingQueue(){
-        greetingQueueService.triggerGreetingQueue();
+        greetingService.triggerGreetingQueue();
         return "Greeting queue has been triggered!";
     }
 
     @GetMapping("/greeting/topic")
     public String triggerGreetingTopic(){
-        greetingTopicService.triggerGreetingTopic();
+        greetingService.triggerGreetingTopic();
         return "Greeting topic has been triggered!";
     }
 }

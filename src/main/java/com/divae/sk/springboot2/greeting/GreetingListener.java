@@ -10,7 +10,8 @@ public class GreetingListener {
 
     @JmsListener(
             destination = "greeting-queue",
-            containerFactory = "queueContainerFactory")
+            containerFactory = "queueContainerFactory"
+    )
     public void greetingListenerQueue(final String message) {
         log.info("greeting QUEUE listener has received an event: {}", message);
     }
