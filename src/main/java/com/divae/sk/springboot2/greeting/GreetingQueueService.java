@@ -7,14 +7,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class GreetingQueueService {
 
-    private final JmsTemplate queJmsTemplate;
+    private final JmsTemplate queueJmsTemplate;
 
-    public GreetingQueueService(@Qualifier("queueJmsTemplate") JmsTemplate queJmsTemplate) {
-        this.queJmsTemplate = queJmsTemplate;
+    public GreetingQueueService(@Qualifier("queueJmsTemplate") JmsTemplate queueJmsTemplate) {
+        this.queueJmsTemplate = queueJmsTemplate;
     }
 
     void triggerGreetingQueue() {
-        queJmsTemplate.send("greeting-queue", session ->
+        queueJmsTemplate.send("greeting-queue", session ->
                 session.createTextMessage("Hello Queue!"));
     }
 }
