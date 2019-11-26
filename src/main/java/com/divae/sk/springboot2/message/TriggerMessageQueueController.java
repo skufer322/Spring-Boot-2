@@ -13,8 +13,15 @@ public class TriggerMessageQueueController {
 
     @GetMapping("/trigger/{greeter}")
     public String triggerGreeting(@PathVariable final String greeter){
-        messageSenderService.sendGreeting(greeter);
+        messageSenderService.sendTextGreeting(greeter);
 
         return "The greeting has been sent. Take a look at your message logs.";
+    }
+
+    @GetMapping("/trigger/object/{messageInfo}")
+    public String triggerObjectGreeting(@PathVariable final String messageInfo){
+        messageSenderService.sendObjectAndSetHeaders(messageInfo);
+
+        return "An object and some JMS headers have been created. Look at your logs for more info!";
     }
 }
