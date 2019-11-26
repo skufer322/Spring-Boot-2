@@ -29,6 +29,6 @@ public class MessageReceiverService {
         log.info("Headers map: {}", headers);
         log.info("Message headers: {}", messageHeaders);
         log.info("Jms message header accessor: {}", jmsMessageHeaderAccessor);
-        return headers.get("jms_replyTo").toString();
+        return "test123";
     }
 }
