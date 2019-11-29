@@ -11,6 +11,7 @@ import javax.persistence.Id;
 public class Film {
 
     @Id
+    @Setter(AccessLevel.NONE)
     private String id;
     @NonNull private String title;
     @NonNull private Integer year;
