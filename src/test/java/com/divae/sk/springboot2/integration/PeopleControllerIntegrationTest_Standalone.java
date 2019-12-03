@@ -22,7 +22,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebMvcTest(includeFilters
         = @ComponentScan.Filter(
         type = FilterType.ASSIGNABLE_TYPE,
-        classes = {PeopleController.class, PeopleService.class, CreateTestDataTestsOnly.class}
+        classes = {PeopleController.class, PeopleService.class, CreateTestDataTestsOnly.class} // sinnvoller wäre es hier, PeopleService zu mocken -> aber für Demonstrationszwecke mit DataJPA
 ))
 @AutoConfigureDataJpa
 public class PeopleControllerIntegrationTest_Standalone {
