@@ -11,14 +11,14 @@ import java.util.List;
 @RequiredArgsConstructor
 public class PeopleService {
 
-    private final PeopleRepository peopleRepository;
+    private final PersonRepository personRepository;
 
     public List<Person> getAllPersons() {
-        return peopleRepository.findAll();
+        return personRepository.findAll();
     }
 
     public Person getPersonByLastName(String lastName) {
-        List<Person> foundPersons = peopleRepository.findByLastName(lastName);
+        List<Person> foundPersons = personRepository.findByLastName(lastName);
 
         if (foundPersons.size() > 1) {
             throw new MoreThanOnePersonFoundException();

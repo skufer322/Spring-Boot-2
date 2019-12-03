@@ -13,8 +13,8 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.List;
 
-import static org.hamcrest.Matchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -24,7 +24,7 @@ class PeopleServiceTest {
     private PeopleService peopleService;
 
     @Mock
-    private PeopleRepository peopleRepository;
+    private PersonRepository personRepository;
 
     @BeforeAll
     static void setupMocks() {
@@ -34,7 +34,7 @@ class PeopleServiceTest {
     @Test
     void getPersonByLastName_onePerson() {
         String personLastNameToSearch = "onePerson";
-        when(peopleRepository.findByLastName(personLastNameToSearch)).thenReturn(List.of(new Person("firstName", "lastName")));
+        when(personRepository.findByLastName(personLastNameToSearch)).thenReturn(List.of(new Person("firstName", "lastName")));
 
         Person person = peopleService.getPersonByLastName(personLastNameToSearch);
 
@@ -42,17 +42,17 @@ class PeopleServiceTest {
     }
 
     @Test
-    void getPersonByLastName_noPerson(){
+    void getPersonByLastName_noPerson() {
         String personLastNameToSearch = "inexistentPerson";
-        when(peopleRepository.findByLastName(personLastNameToSearch)).thenReturn(List.of());
+        when(personRepository.findByLastName(personLastNameToSearch)).thenReturn(List.of());
 
         Assertions.assertThrows(PersonNotFoundException.class, () -> peopleService.getPersonByLastName(personLastNameToSearch));
     }
 
     @Test
-    void getPersonByLastName_multiplePersons(){
+    void getPersonByLastName_multiplePersons() {
         String personLastNameToSearch = "multipleExistingPersons";
-        when(peopleRepository.findByLastName(personLastNameToSearch)).thenReturn(List.of(new Person("aFirst", "aLast"), new Person("bFirst", "bLast")));
+        when(personRepository.findByLastName(personLastNameToSearch)).thenReturn(List.of(new Person("aFirst", "aLast"), new Person("bFirst", "bLast")));
 
         Assertions.assertThrows(MoreThanOnePersonFoundException.class, () -> peopleService.getPersonByLastName(personLastNameToSearch));
     }

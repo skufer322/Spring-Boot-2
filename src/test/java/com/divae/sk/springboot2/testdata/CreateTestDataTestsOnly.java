@@ -1,7 +1,7 @@
 package com.divae.sk.springboot2.testdata;
 
-import com.divae.sk.springboot2.people.PeopleRepository;
 import com.divae.sk.springboot2.people.Person;
+import com.divae.sk.springboot2.people.PersonRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -15,7 +15,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CreateTestDataTestsOnly {
 
-    private final PeopleRepository peopleRepository;
+    private final PersonRepository personRepository;
 
     @PostConstruct
     public void createTestData() {
@@ -38,6 +38,6 @@ public class CreateTestDataTestsOnly {
 
         List<Person> personList = List.of(person1, person2, person3);
 
-        peopleRepository.saveAll(personList);
+        personRepository.saveAll(personList);
     }
 }
