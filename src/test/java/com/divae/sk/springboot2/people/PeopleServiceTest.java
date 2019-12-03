@@ -56,5 +56,4 @@ class PeopleServiceTest {
 
         Assertions.assertThrows(MoreThanOnePersonFoundException.class, () -> peopleService.getPersonByLastName(personLastNameToSearch));
     }
-
 }
