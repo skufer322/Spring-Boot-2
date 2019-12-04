@@ -18,7 +18,7 @@ import static org.hamcrest.Matchers.is;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-class PeopleServiceTest {
+class PeopleServiceTest_Mock {
 
     @InjectMocks
     private PeopleService peopleService;
@@ -28,7 +28,7 @@ class PeopleServiceTest {
 
     @BeforeAll
     static void setupMocks() {
-        MockitoAnnotations.initMocks(PeopleServiceTest.class);
+        MockitoAnnotations.initMocks(PeopleServiceTest_Mock.class);
     }
 
     @Test
