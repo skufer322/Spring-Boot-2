@@ -1,5 +1,8 @@
-package com.divae.sk.springboot2.people;
+package com.divae.sk.springboot2.integration;
 
+import com.divae.sk.springboot2.people.PeopleService;
+import com.divae.sk.springboot2.people.Person;
+import com.divae.sk.springboot2.people.PersonRepository;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
