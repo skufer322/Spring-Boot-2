@@ -3,12 +3,10 @@ package com.divae.sk.springboot2.people;
 import com.divae.sk.springboot2.people.exceptions.MoreThanOnePersonFoundException;
 import com.divae.sk.springboot2.people.exceptions.PersonNotFoundException;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.List;
@@ -25,11 +23,6 @@ class PeopleServiceTest_Mock {
 
     @Mock
     private PersonRepository personRepository;
-
-    @BeforeAll
-    static void setupMocks() {
-        MockitoAnnotations.initMocks(PeopleServiceTest_Mock.class);
-    }
 
     @Test
     void getPersonByLastName_onePerson() {
