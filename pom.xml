@@ -12,7 +12,7 @@
     <artifactId>spring-boot-2</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>spring-boot-2</name>
-    <description>SK's second project for Spring Boot 2</description>
+    <description>SK's second project for Spring Boot 2 - now testing Spring Actuator</description>
 
     <properties>
         <java.version>11</java.version>
@@ -36,6 +36,10 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
         <!-- optional spring boot starters -->
@@ -82,6 +86,10 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>pl.project13.maven</groupId>
+                <artifactId>git-commit-id-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
