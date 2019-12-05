@@ -6,7 +6,7 @@
 * für Mockito: @ExtendWith(MockitoExtension.class)
 
 ## Mock vs. MockBean
-* @MockBean: 
+* @MockBean -> für **Integrationstests**: 
     * The mock will replace any existing bean of the same type in the application context.
     * If no bean of the same type is defined, a new one will be added.
     * MockBeans müssten auch automatisch in die anderen @Components injected werden.
