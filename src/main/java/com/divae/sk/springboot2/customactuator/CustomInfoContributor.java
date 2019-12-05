@@ -1,4 +1,4 @@
-package com.divae.sk.springboot2.infocontributors;
+package com.divae.sk.springboot2.customactuator;
 
 import lombok.Builder;
 import lombok.Value;
@@ -7,7 +7,7 @@ import org.springframework.boot.actuate.info.InfoContributor;
 import org.springframework.stereotype.Component;
 
 @Component
-public class MyInfoContributor implements InfoContributor {
+public class CustomInfoContributor implements InfoContributor {
 
     @Override
     public void contribute(Info.Builder builder) {
